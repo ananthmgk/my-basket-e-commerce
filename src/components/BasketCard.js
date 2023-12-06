@@ -1,7 +1,11 @@
 const BasketCard = (props) => {
   return (
-    <div className="border-2 m-3 w-52 rounded-lg">
-      <img className="w-full" src={props.basket.images[0].m} alt="starberry" />
+    <div className=" m-3 w-52 rounded-lg shadow-2xl">
+      <img
+        className="w-full"
+        src={props.basket.images[0].m}
+        alt="Product Name"
+      />
       <h3 className="px-3 font-light">{props.basket.brand.name}</h3>
       <h2 className="px-3 font-bold">{props.basket.desc}</h2>
       <h3 className="px-3">{props.basket.w}</h3>

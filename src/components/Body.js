@@ -2,6 +2,8 @@ import { productList } from "../config";
 import BasketCard from "./BasketCard";
 import { useEffect, useState } from "react";
 import { filterData } from "../uttilites/helper";
+import { Link } from "react-router-dom";
+import ProductMenu from "./ProductMenu";
 
 const Body = () => {
   const [allProducts, setallProducts] = useState(productList);
@@ -47,7 +49,11 @@ const Body = () => {
           <h1>No Product match your Filter!!</h1>
         ) : (
           filteredProducts.map((products) => {
-            return <BasketCard basket={products} key={products.id} />; // {...products} is same.
+            return (
+              <Link to={"product/" + products.id} key={products.id}>
+                <BasketCard basket={products} />
+              </Link>
+            ); // {...products} is same.
           })
         )}
       </div>

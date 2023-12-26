@@ -40,6 +40,7 @@ const appRouter = createBrowserRouter([
       {
         path: "product/:prodId",
         element: <ProductMenu />,
+        errorElement: <Error />,
       },
     ],
   },

@@ -49,3 +49,21 @@ const arr = [
 const key = "30009286";
 const value = arr.find((obj) => obj.hasOwnProperty(key))[key];
 console.log(value);
+
+// Assuming you have an input field with an associated button
+const inputField = document.getElementById("myInput"); // Replace 'myInput' with your actual input field ID
+const myButton = document.getElementById("myButton"); // Replace 'myButton' with your actual button ID
+
+// Add an event listener to the input field
+inputField.addEventListener("keyup", function (event) {
+  if (event.key === "Enter") {
+    // Trigger the button click when Enter key is pressed
+    myButton.click();
+  }
+});
+
+// Your button click handler
+myButton.addEventListener("click", function () {
+  // Your button's functionality here
+  console.log("Button clicked!");
+});

@@ -2,21 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .dropdown-content {
-  z-index: 1;
-} */
-
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content1 {
   display: block;
 }
+
+.dropdown:hover .dropdown-content2 {
+  display: block;
+}
+
+.dropdown:hover .dropdown-content3 {
+  display: block;
+}
+
 /* .toggle {
   display: block;
 } */
 
-/* .logo {
-  width: 100px;
-}
-
+/* 
 .header {
   display: flex;
   justify-content: space-between;

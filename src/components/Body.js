@@ -1,6 +1,6 @@
 import { productList } from "../config";
 import BasketCard from "./BasketCard";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { filterData } from "../uttilites/helper";
 import { Link } from "react-router-dom";
 
@@ -9,7 +9,22 @@ const Body = () => {
   const [filteredProducts, setfilteredProducts] = useState(productList);
   const [searchInput, setSearchInput] = useState("");
 
-  console.log(productList);
+  const searchedData = () => {
+    const data = filterData(searchInput, allProducts);
+    setfilteredProducts(data);
+  };
+
+  function debounceing(func) {
+    let timeout;
+    return function (...args) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        func(args);
+      }, 1000);
+    };
+  }
+
+  const starterDebounce = debounceing(searchedData);
 
   // useEffect(() => {
   //   getProducts();
@@ -41,16 +56,33 @@ const Body = () => {
           onChange={(e) => {
             setSearchInput(e.target.value);
           }}
+          onKeyUp={starterDebounce}
         />
         <button
           className="p-2 m-2 bg-purple-500 hover:bg-gray-400 text-white rounded-md"
-          onClick={() => {
-            const data = filterData(searchInput, allProducts);
-            setfilteredProducts(data);
-          }}
+          onClick={searchedData}
         >
           Search
         </button>
+        <div className="dropdown justify-items-center items-center relative inline-block">
+          <button className="dropbtn p-2 m-2 px-8 mx-10 bg-yellow-700 hover:bg-yellow-500 text-white rounded-md">
+            Category
+          </button>
+          <div className="dropdown-content absolute hidden bg-amber-100 min-w-40 shadow-lg">
+            <Link to="/" className="block text-black px-3 py-4">
+              Level 1a
+            </Link>
+            <Link to="/" className="block text-black px-3 py-4">
+              Level 1b
+            </Link>
+            <Link to="/" className="block text-black px-3 py-4">
+              Level 1c
+            </Link>
+            <Link to="/" className="block text-black px-3 py-4">
+              Level 1d
+            </Link>
+          </div>
+        </div>
       </div>
       <div className="flex flex-wrap ">
         {filteredProducts.length == 0 ? (

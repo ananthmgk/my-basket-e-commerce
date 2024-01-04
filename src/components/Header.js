@@ -17,7 +17,7 @@ const Header = () => {
     <div className="flex justify-between bg-pink-50 shadow-lg sm:bg-blue-50">
       <Title />
       <h1 className="font-black text-4xl text-indigo-600">My Basket</h1>
-      <div className="nav-items">
+      <div>
         <ul className="flex py-10 text-indigo-400">
           <Link to="/">
             <li className="px-2">Home</li>

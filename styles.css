@@ -2,17 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-.dropdown:hover .dropdown-content1 {
+/* .dropdown:hover .category-list {
   display: block;
 }
 
-.dropdown:hover .dropdown-content2 {
+.dropbtn:hover + .category-list {
   display: block;
 }
 
-.dropdown:hover .dropdown-content3 {
+.bike:hover + .bike-list {
   display: block;
 }
+
+.hide {
+  display: none;
+}
+
+.myDIV:hover + .hide {
+  display: block;
+  color: red;
+}
+
+
+.dropdown:hover .car-list {
+  display: block;
+}
+
+.bike:hover .bike-list {
+  display: block;
+}
+
+.dropdown:hover .hyundai-model {
+  display: block;
+} */
 
 /* .toggle {
   display: block;

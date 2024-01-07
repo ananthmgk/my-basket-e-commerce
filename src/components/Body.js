@@ -11,10 +11,9 @@ const Body = () => {
   const [showCategoryList, setShowCategoryList] = useState(false);
   const [showCarList, setShowCarList] = useState(false);
   const [showBikeList, setShowBikeList] = useState(false);
+  const [showBiscuitList, setShowBiscuitList] = useState(false);
+  const [showAppliancesList, setShowAppliancesList] = useState(false);
   const [showHyundaiList, setShowHyundaiList] = useState(false);
-
-  // const [showBiscuitList, setShowBiscuitList] = useState(false);
-  // const [showSnacksList, setShowSnacksList] = useState(false);
 
   const searchedData = () => {
     const data = filterData(searchInput, allProducts);
@@ -97,34 +96,51 @@ const Body = () => {
               <Link
                 to="/"
                 className="car block hover:bg-yellow-500 text-black px-3 py-4"
-                onMouseEnter={() => setShowCarList(true)}
-                onMouseLeave={() => {
-                  showBikeList ? setShowCarList(false) : null;
+                onMouseEnter={() => {
+                  setShowCarList(true);
+                  setShowBikeList(false);
+                  setShowBiscuitList(false);
+                  setShowAppliancesList(false);
                 }}
+                // onMouseLeave={() => {
+                //   !showCarList ? setShowCarList(false) : setShowCarList(true);
+                // }}
               >
-                Car
+                Cars
               </Link>
               <Link
                 to="/"
                 className="bike block hover:bg-yellow-500 text-black px-3 py-4"
-                onMouseEnter={() => setShowBikeList(true)}
-                onMouseLeave={() => {
-                  showCarList ? setShowBikeList(false) : null;
+                onMouseEnter={() => {
+                  setShowBikeList(true);
+                  setShowCarList(false);
+                  setShowBiscuitList(false);
+                  setShowAppliancesList(false);
+                }}
+                // onMouseLeave={() => setShowBikeList(false)}
+              >
+                Bikes
+              </Link>
+              <Link
+                to="/"
+                className="biscuit block hover:bg-yellow-500 text-black px-3 py-4"
+                onMouseEnter={() => {
+                  setShowBiscuitList(true);
+                  setShowBikeList(false);
+                  setShowAppliancesList(false);
                 }}
               >
-                Bike
+                Biscuits
               </Link>
               <Link
                 to="/"
-                className="block hover:bg-yellow-500 text-black px-3 py-4"
+                className="home-appliances block hover:bg-yellow-500 text-black px-3 py-4"
+                onMouseEnter={() => {
+                  setShowAppliancesList(true);
+                  setShowBiscuitList(false);
+                }}
               >
-                Biscuit
-              </Link>
-              <Link
-                to="/"
-                className="block hover:bg-yellow-500 text-black px-3 py-4"
-              >
-                Snacks
+                Home Appliances
               </Link>
             </div>
           )}
@@ -133,8 +149,6 @@ const Body = () => {
               <Link
                 to="/"
                 className="block hover:bg-yellow-500 text-black px-3 py-4"
-                onMouseEnter={() => setShowHyundaiList(true)}
-                onMouseLeave={() => setShowHyundaiList(false)}
               >
                 Hyundai
               </Link>
@@ -183,6 +197,62 @@ const Body = () => {
                 className="block hover:bg-yellow-500 text-black px-3 py-4"
               >
                 Yamaha
+              </Link>
+            </div>
+          )}
+          {showBiscuitList && (
+            <div className="biscuit-list absolute bg-amber-100 w-40 ml-40 shadow-lg">
+              <Link
+                to="/"
+                className="block hover:bg-yellow-500 text-black px-3 py-4"
+              >
+                Good Day
+              </Link>
+              <Link
+                to="/"
+                className="block hover:bg-yellow-500 text-black px-3 py-4"
+              >
+                Parle G
+              </Link>
+              <Link
+                to="/"
+                className="block hover:bg-yellow-500 text-black px-3 py-4"
+              >
+                Britannia
+              </Link>
+              <Link
+                to="/"
+                className="block hover:bg-yellow-500 text-black px-3 py-4"
+              >
+                Sunfeast
+              </Link>
+            </div>
+          )}
+          {showAppliancesList && (
+            <div className="appliance-list absolute bg-amber-100 w-40 ml-40 shadow-lg">
+              <Link
+                to="/"
+                className="block hover:bg-yellow-500 text-black px-3 py-4"
+              >
+                TV
+              </Link>
+              <Link
+                to="/"
+                className="block hover:bg-yellow-500 text-black px-3 py-4"
+              >
+                Refrigerator
+              </Link>
+              <Link
+                to="/"
+                className="block hover:bg-yellow-500 text-black px-3 py-4"
+              >
+                Washing Machine
+              </Link>
+              <Link
+                to="/"
+                className="block hover:bg-yellow-500 text-black px-3 py-4"
+              >
+                Air Conditioner
               </Link>
             </div>
           )}

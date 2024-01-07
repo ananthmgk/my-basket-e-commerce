@@ -28,7 +28,9 @@ const Header = () => {
           <Link to="/contact">
             <li className="px-2">Contact</li>
           </Link>
-          <li className="px-2">Cart</li>
+          <Link to="/ananth">
+            <li className="px-2">Cart</li>
+          </Link>
         </ul>
       </div>
     </div>

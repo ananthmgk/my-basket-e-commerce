@@ -268,7 +268,7 @@ const Body = () => {
                 Verna
               </Link>
               <Link to="/" className="block text-black px-3 py-4">
-                I-20
+                I-20v
               </Link>
             </div>
           )}

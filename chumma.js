@@ -205,3 +205,20 @@ style={{
 
       {border border-solid border-black}
 
+<div className="category-list border border-solid border-black absolute left-0 bg-amber-100 w-52 shadow-lg">
+            {categories.map((category) => {
+              return (
+                <Link
+                  className="block hover:bg-yellow-500 text-black px-3 py-4"
+                  key={category.id}
+                  onMouseEnter={() => {
+                    handleMouseEnterOne(category.children);
+                    firstChildrenRef.current.style.display = "block";
+                    setSecondChildrenList([]);
+                  }}
+                >
+                  {category.name}
+                </Link>
+              );
+            })}
+          </div>

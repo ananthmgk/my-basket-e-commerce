@@ -5286,7 +5286,7 @@ export const categoriesList = [
     id: 489,
     name: "Fruits & Vegetables",
     slug: "fruits-vegetables",
-    url: "cl/fruits-vegetables",
+    url: "cl/fruits-vegetables", // // https://www.bigbasket.com/cl/fruits-vegetables/?nc=nb
     level: 0,
     bannersList: [
       {

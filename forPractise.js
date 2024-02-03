@@ -51,3 +51,4 @@ const value = arr.find((obj) => obj.hasOwnProperty(key))[key];
 console.log(value);
 
 // ------------------------------------------
+// border border-solid border-black

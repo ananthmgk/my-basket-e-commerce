@@ -2,13 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-.category-list {
-  display: none;
+.blur {
+  position: absolute;
+  margin-left: -300px;
+  margin-right: 400px;
+  padding: 0px;
+  width: 100vw;
+  height: 200vh;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
 }
 
-.firstchildren-list {
+/* .firstchildren-list {
   display: none;
-}
+} */
 /* 
 .header {
   display: flex;
